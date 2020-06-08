@@ -1,3 +1,29 @@
 .list-group-item {
   line-height: 2.5;
 }
+.mainText{
+  z-index: 1;
+  color: #C3083F;
+}
+.mainTextStyle{
+    z-index: 1;
+    color: #C3083F;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.greyText{
+    z-index: 1;
+    color: #4E4E50;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.movie-genre-dropdown{
+    z-index: 1;
+}
+.movie-rating-dropdown{
+    z-index: 1;
+}
+@media screen and (max-width: 600px){
+    
+}
+body{
+    background-color: #1A1A1C;
+};

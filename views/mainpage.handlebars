@@ -1,0 +1,262 @@
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Rotten Potatoes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link first-navbar-button" href="#">SOMETHING HERE<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link second-navbar-button" href="#">SOMETHING HERE</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link third-navbar-button" href="#">SOMETHING HERE</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="text-center mt-5 text-wrap font-weight-bold">
+        <div class="row">
+            <div class="col-md-12 mainText mb-2">
+                <h2>Welcome To</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mainTextStyle mb-5">
+                <h1>Rotten Potatoes Movie Rater</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 greyText mb-3">
+                <h6>Rate Movies below by inputing a Movie Name, selecting a Genre, and selecting a Rating</h6>
+            </div>
+        </div>
+    </div>
+    <div id="movieLists">
+        <!-- ROW 1 -->
+        <div class="row">
+            <!-- Movie Input Here -->
+            <div id="item1" class="col-md-4"></div>
+            <div id="item2" class="col-md-2">
+                <div class="input-group mb-3 movie-name-input">
+                    <input type="text" class="form-control" placeholder="Movie Name" aria-label="Movie Name">
+                </div>
+            </div>
+            <!-- Movie Genre Here -->
+            <div class="col-md-1">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="selectedGenreOne">Movie Genre</span></button>
+                        <div id="firstMovieGenre" class="dropdown-menu">
+                            <a class="dropdown-item comedyOption" href="#">Comedy</a>
+                            <a class="dropdown-item actionOption" href="#">Action</a>
+                            <a class="dropdown-item dramaOption" href="#">Drama</a>
+                            <a class="dropdown-item horrorOption" href="#">Horror</a>
+                            <a class="dropdown-item romanceOption" href="#">Romance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Rating Drop Down Here -->
+            <div class="col-md-1">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="selectedRatingOne">Movie Rating</span></button>
+                        <div id="firstMovieRating" class="dropdown-menu">
+                            <a class="dropdown-item oneStar" href="#">1</a>
+                            <a class="dropdown-item twoStar" href="#">2</a>
+                            <a class="dropdown-item threeStar" href="#">3</a>
+                            <a class="dropdown-item fourStar" href="#">4</a>
+                            <a class="dropdown-item fiveStar" href="#">5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <!-- ROW 2 -->
+        <div class="row">
+            <!-- Movie Input Here -->
+            <div id="item1" class="col-md-4"></div>
+            <div id="item2" class="col-md-2">
+                <div class="input-group mb-3 movie-name-input">
+                    <input type="text" class="form-control" placeholder="Movie Name" aria-label="Movie Name">
+                </div>
+            </div>
+            <!-- Movie Genre Here -->
+            <div class="col-md-1">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="selectedGenreTwo">Movie Genre</span></button>
+                        <div id="secondMovieGenre" class="dropdown-menu">
+                            <a class="dropdown-item comedyOption" href="#">Comedy</a>
+                            <a class="dropdown-item actionOption" href="#">Action</a>
+                            <a class="dropdown-item dramaOption" href="#">Drama</a>
+                            <a class="dropdown-item horrorOption" href="#">Horror</a>
+                            <a class="dropdown-item romanceOption" href="#">Romance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Rating Drop Down Here -->
+            <div class="col-md-1">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="selectedRatingTwo">Movie Rating</span></button>
+                        <div id="secondMovieRating" class="dropdown-menu">
+                            <a class="dropdown-item oneStar" href="#">1</a>
+                            <a class="dropdown-item twoStar" href="#">2</a>
+                            <a class="dropdown-item threeStar" href="#">3</a>
+                            <a class="dropdown-item fourStar" href="#">4</a>
+                            <a class="dropdown-item fiveStar" href="#">5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <!-- ROW 3 -->
+        <div class="row">
+            <!-- Movie Input Here -->
+            <div id="item1" class="col-md-4"></div>
+            <div id="item2" class="col-md-2">
+                <div class="input-group mb-3 movie-name-input">
+                    <input type="text" class="form-control" placeholder="Movie Name" aria-label="Movie Name">
+                </div>
+            </div>
+            <!-- Movie Genre Here -->
+            <div class="col-md-1">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="selectedGenreThree">Movie Genre</span></button>
+                        <div id="thirdMovieGenre" class="dropdown-menu">
+                            <a class="dropdown-item comedyOption" href="#">Comedy</a>
+                            <a class="dropdown-item actionOption" href="#">Action</a>
+                            <a class="dropdown-item dramaOption" href="#">Drama</a>
+                            <a class="dropdown-item horrorOption" href="#">Horror</a>
+                            <a class="dropdown-item romanceOption" href="#">Romance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Rating Drop Down Here -->
+            <div class="col-md-1">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="selectedRatingThree">Movie Rating</span></button>
+                        <div id="thirdMovieRating" class="dropdown-menu">
+                            <a class="dropdown-item oneStar" href="#">1</a>
+                            <a class="dropdown-item twoStar" href="#">2</a>
+                            <a class="dropdown-item threeStar" href="#">3</a>
+                            <a class="dropdown-item fourStar" href="#">4</a>
+                            <a class="dropdown-item fiveStar" href="#">5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <!-- ROW 4 -->
+        <div class="row">
+            <!-- Movie Input Here -->
+            <div id="item1" class="col-md-4"></div>
+            <div id="item2" class="col-md-2">
+                <div class="input-group mb-3 movie-name-input">
+                    <input type="text" class="form-control" placeholder="Movie Name" aria-label="Movie Name">
+                </div>
+            </div>
+            <!-- Movie Genre Here -->
+            <div class="col-md-1">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="selectedGenreFour">Movie Genre</span></button>
+                        <div id="fourthMovieGenre" class="dropdown-menu">
+                            <a class="dropdown-item comedyOption" href="#">Comedy</a>
+                            <a class="dropdown-item actionOption" href="#">Action</a>
+                            <a class="dropdown-item dramaOption" href="#">Drama</a>
+                            <a class="dropdown-item horrorOption" href="#">Horror</a>
+                            <a class="dropdown-item romanceOption" href="#">Romance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Rating Drop Down Here -->
+            <div class="col-md-1">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="selectedRatingFour">Movie Rating</span></button>
+                        <div id="fourthMovieRating" class="dropdown-menu">
+                            <a class="dropdown-item oneStar" href="#">1</a>
+                            <a class="dropdown-item twoStar" href="#">2</a>
+                            <a class="dropdown-item threeStar" href="#">3</a>
+                            <a class="dropdown-item fourStar" href="#">4</a>
+                            <a class="dropdown-item fiveStar" href="#">5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <!-- ROW 5 -->
+        <div class="row">
+            <!-- Movie Input Here -->
+            <div id="item1" class="col-md-4"></div>
+            <div id="item2" class="col-md-2">
+                <div class="input-group mb-3 movie-name-input">
+                    <input type="text" class="form-control" placeholder="Movie Name" aria-label="Movie Name">
+                </div>
+            </div>
+            <!-- Movie Genre Here -->
+            <div class="col-md-1">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="selectedGenreFive">Movie Genre</span></button>
+                        <div id="fifthMovieGenre" class="dropdown-menu">
+                            <a class="dropdown-item comedyOption" href="#">Comedy</a>
+                            <a class="dropdown-item actionOption" href="#">Action</a>
+                            <a class="dropdown-item dramaOption" href="#">Drama</a>
+                            <a class="dropdown-item horrorOption" href="#">Horror</a>
+                            <a class="dropdown-item romanceOption" href="#">Romance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Rating Drop Down Here -->
+            <div class="col-md-1">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="selectedRatingFive">Movie Rating</span></button>
+                        <div id="fifthMovieRating" class="dropdown-menu">
+                            <a class="dropdown-item oneStar" href="#">1</a>
+                            <a class="dropdown-item twoStar" href="#">2</a>
+                            <a class="dropdown-item threeStar" href="#">3</a>
+                            <a class="dropdown-item fourStar" href="#">4</a>
+                            <a class="dropdown-item fiveStar" href="#">5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+    <div id="saveButton">
+        <div class="col-md-12 text-center">
+            <button type="button" class="btn btn-outline-warning" id="saveOptions">Save List</button>
+        </div>
+    </div>
