@@ -6,6 +6,9 @@ const { allowInsecurePrototypeAccess } = require("@handlebars/allow-prototype-ac
 const authController = require("./controller/auth-controller");
 const userController = require("./controller/user-controller");
 const historyController = require("./controller/history-controller");
+const genreController = require("./controller/genre-controller");
+const movieController = require("./controller/movie-controller");
+const ratingController = require("./controller/rating-controller");
 
 const db = require("./models");
 
@@ -30,6 +33,9 @@ app.set("view engine", "handlebars");
 app.use(authController);
 app.use(userController);
 app.use(historyController);
+app.use(genreController);
+app.use(movieController);
+app.use(ratingController)
 
 const syncOptions = { force: false };
 

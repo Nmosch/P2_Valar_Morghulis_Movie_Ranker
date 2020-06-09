@@ -21,7 +21,7 @@ router.get("/api/rating", async(req,res)=>{
         res.status(500).send();
     }
  });
-router.post("/api/rating",()=>{
+router.post("/api/rating",async(req,res)=>{
     try {
         const data = await db.rating.create(req.body);
         res.json(data);
