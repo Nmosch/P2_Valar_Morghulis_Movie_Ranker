@@ -6,7 +6,7 @@ const db = require("../models");
 router.get("/movies", async (req, res) => {
     try {
         const data = await db.movie.findAll();
-        res.render("movie", { movies: data });
+        res.render("mainpage", { movies: data });
     } catch (error) {
         console.log(error);
         res.status(500).send();
