@@ -1,6 +1,9 @@
 .list-group-item {
   line-height: 2.5;
 }
+.navbar-custom{
+    background-color: #880D1E;
+}
 .mainText{
   z-index: 1;
   color: #C3083F;
@@ -21,9 +24,26 @@
 .movie-rating-dropdown{
     z-index: 1;
 }
+.form-control{
+    background-color: rgba(179, 179, 185, 0.329);
+}
+.form-control:focus{
+    border-color: rgb(182,59,59);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(192,59,59,0.6);
+    background-color: rgb(179,179,185);
+}
+.btn-outline-danger:hover{
+    /* color: red;
+    background-color: maroon;
+    border-color: green; */
+}
 @media screen and (max-width: 600px){
     
 }
 body{
+    background-image: url("/public/imgs/mainbg.jfif");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: #1A1A1C;
+    overflow-x: hidden;
 };
