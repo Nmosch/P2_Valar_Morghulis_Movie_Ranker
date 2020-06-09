@@ -1,0 +1,10 @@
+.form-control{
+    max-width: 80%;
+    margin-left: 2.5rem;
+    object-position: center;
+}
+body{
+    background-image: none !important;
+    background-color: #1A1A1C;
+    overflow-x: hidden;
+}

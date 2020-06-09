@@ -37,9 +37,6 @@
     background-color: maroon;
     border-color: green; */
 }
-@media screen and (max-width: 600px){
-    
-}
 body{
     background-image: url("/public/imgs/mainbg.jfif");
     background-size: cover;
