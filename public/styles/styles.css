@@ -38,7 +38,7 @@
     border-color: green; */
 }
 body{
-    background-image: url("/public/imgs/mainbg.jfif");
+    background-image: url("/imgs/mainbg.jfif");
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #1A1A1C;
