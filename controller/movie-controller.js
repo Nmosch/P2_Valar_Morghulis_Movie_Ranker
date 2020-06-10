@@ -35,6 +35,7 @@ router.get("/api/movies/:id", async (req, res) => {
         res.status(500).send();
     }
 });
+
 router.post("/api/movies", async (req, res) => {
     try {
         const data = await db.movie.create(req.body);
@@ -46,3 +47,11 @@ router.post("/api/movies", async (req, res) => {
 });
 
 module.exports = router
+
+// Review.findAll({
+//     attributes: ['venueId', [models.sequelize.fn('AVG', models.sequelize.col('venue_id')), 'venueIdCount']],
+//     group: 'venue_id'
+//     order: [[models.sequelize.fn('AVG', models.sequelize.col('venue_id')), 'DESC']]
+//  }).then(function() {
+//     //Do something
+//  }})
