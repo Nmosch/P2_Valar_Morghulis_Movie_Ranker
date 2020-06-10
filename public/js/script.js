@@ -9,6 +9,5 @@ $( document ).ready(function() {
 
     $("#saveOptions").click(function(){
         console.log("Working")
-        
     })
 });
