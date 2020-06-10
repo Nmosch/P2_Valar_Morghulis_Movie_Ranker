@@ -29,7 +29,7 @@ router.get("/api/movies/:id", async (req, res) => {
                 id: req.params.id
             }
         });
-        res.json(data)
+        res.json(data);
     } catch (error) {
         console.log(error);
         res.status(500).send();
@@ -38,11 +38,11 @@ router.get("/api/movies/:id", async (req, res) => {
 router.post("/api/movies", async (req, res) => {
     try {
         const data = await db.movie.create(req.body);
-        res.json(data)
+        res.json(data);
     } catch (error) {
         console.log(error);
         res.status(500).send();
     }
 });
 
-module.exports = router
+module.exports = router;
