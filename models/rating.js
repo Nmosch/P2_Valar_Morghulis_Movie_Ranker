@@ -16,6 +16,11 @@ module.exports = (sequelize, Datatypes) =>{
                 allowNull:false
             }
         });
+        Rating.belongsTo(models.user,{
+            foreignKey:{
+                allowNull: false
+            }
+        });
     };
 return Rating;
 };

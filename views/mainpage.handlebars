@@ -38,29 +38,27 @@
             </div>
         </div>
     </div>
-    
+
     <div id="movieLists">
         <div class="row">
             <!-- Movie Input Here -->
             <div class="col-md-3"></div>
             <div class="col-md-2">
                 <div class="input-group mb-3 movie-name-input">
-                    <input type="text" class="form-control" placeholder="Movie Name" aria-label="Movie Name">
+                    <input type="text" class="form-control" placeholder="Movie Name" aria-label="Movie Name" id="addMovies">
                 </div>
             </div>
             <!-- Movie Genre Here -->
             <div class="col-md-1">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <button class="btn btn-outline-danger dropdown-toggle" type="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="selectedGenreOne">Movie Genre</span></button>
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><span id="selectedGenreOne">Movie
+                                Genre</span></button>
                         <div id="firstMovieGenre" class="dropdown-menu">
-                            <a class="dropdown-item comedyOption" href="#">Comedy</a>
-                            <a class="dropdown-item actionOption" href="#">Action</a>
-                            <a class="dropdown-item dramaOption" href="#">Drama</a>
-                            <a class="dropdown-item horrorOption" href="#">Horror/Thriller</a>
-                            <a class="dropdown-item romanceOption" href="#">Romance</a>
-                            <a class="dropdown-item romanceOption" href="#">SciFi/Fantasy</a>
+                            {{#each genre}}
+                                <a class="dropdown-item" data-id={{id}}>{{genre}}</a>
+                            {{/each}}
                         </div>
                     </div>
                 </div>
@@ -69,8 +67,9 @@
             <div class="col-md-1">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <button class="btn btn-outline-danger dropdown-toggle" type="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="selectedRatingOne">Movie Rating</span></button>
+                        <button class="btn btn-outline-danger dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"><span id="selectedRatingOne">Movie
+                                Rating</span></button>
                         <div id="firstMovieRating" class="dropdown-menu">
                             <a class="dropdown-item oneStar" href="#">1</a>
                             <a class="dropdown-item twoStar" href="#">2</a>
