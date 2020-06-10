@@ -52,6 +52,7 @@ router.get("/api/users/:id", async (req, res) => {
   }
 });
 
+
 router.post(
   "/api/users",
   passport.authenticate("jwt", { session: false }),

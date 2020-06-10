@@ -10,8 +10,7 @@ router.get("/movies", async (req, res) => {
         console.log(error);
         res.status(500).send();
     }
-});
-
+})
 router.get("/api/genre", async (req, res) => {
     try {
         const data = await db.genre.findAll();
