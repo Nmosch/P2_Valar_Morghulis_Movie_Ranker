@@ -38,6 +38,7 @@ router.get("/api/movies/:id", async (req, res) => {
 
 router.post("/api/movies", async (req, res) => {
     try {
+        console.log(req.body);
         const data = await db.movie.create(req.body);
         res.json(data);
     } catch (error) {
