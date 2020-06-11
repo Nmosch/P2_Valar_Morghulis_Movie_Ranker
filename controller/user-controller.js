@@ -13,7 +13,7 @@ router.get("/users", async (req, res) => {
     if (req.user) {
       const data = await db.user.findAll();
 
-      res.render("user", { users: data });
+      res.render("mainpage", { users: data });
     } else {
       res.redirect("/login");
     }
@@ -52,6 +52,19 @@ router.get("/api/users/:id", async (req, res) => {
   }
 });
 
+router.get("/api/user/rating/:id", async (req, res) => {
+  try {
+    const data = await db.rating.findAll({
+      where: {
+        user_id: req.params.is
+      }
+    });
+    res.json(data);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send();
+  }
+});
 
 router.post(
   "/api/users",

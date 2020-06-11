@@ -21,7 +21,7 @@ router.get("/api/movies", async (req, res) => {
         console.log(error);
         res.status(500).send();
     }
-})
+});
 router.get("/api/movies/:id", async (req, res) => {
     try {
         const data = await db.movie.findOne({
