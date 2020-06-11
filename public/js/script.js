@@ -8,18 +8,15 @@ $( document ).ready(function() {
     })
 
     function newMovie(){
-        const newMovie = $("#addMovies").val().trim().toUpperCase()
-        const genreId = $(this).data("id")
-        
-        $.ajax({
-            url: "/api/movies",
-            method: POST,
-            data: {
-                title: newMovie,
-                genreId: genreId
-            }
-        })
-        .then(()=>{
+        let newMovie = {
+            title: $("#addMovies").val().trim().toUpperCase(),
+            genreId: $(this).data("id")
+        }
+        $.ajax("/api/movies",{
+            method:"POST",
+            data: newMovie
+        }) .then(()=>{
+            console.log("Rated New Movie")
             location.reload()
         })
     }
