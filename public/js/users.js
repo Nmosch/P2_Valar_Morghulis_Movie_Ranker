@@ -1,24 +1,21 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-    function newUser(){
-        const newUserName = $("#userName").val().trim()
-        const newUserEmail = $("#userEmail").val().trim()
-        const newUserPassword = $("#userPassword").val().trim()
-            
-            $.ajax({
-                url: "/api/users",
-                method: POST,
-                data: {
-                    name: newUserName,
-                    email: newUserEmail,
-                    password: newUserPassword,
-                }
-            })
-            .then(()=>{
+    const newUserEmail = $("#userEmail").val().trim();
+    const newUserPassword = $("#userPassword").val().trim();
+
+    $("#submitBtn").on("click", newUser)
+    console.log(newUserEmail);
+    console.log(newUserPassword);
+    function newUser() {
+        $.ajax({
+            url: "/api/users",
+            method: "POST",
+            data: {
+                email: newUserEmail,
+                password: newUserPassword,
+            }
+        }).then(() => {
                 location.reload()
-            })
-
+        })
     }
 });
-
-    
