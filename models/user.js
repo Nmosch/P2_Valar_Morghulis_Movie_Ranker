@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false
       },
-      password: {
-        type: DataTypes.TEXT,
-        allowNull: false
-      }
+      // password: {
+      //   type: DataTypes.TEXT,
+      //   allowNull: false
+      // }
     },
     {
       underscored: true,

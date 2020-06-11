@@ -28,7 +28,7 @@ router.use(cookieParser());
 
 router.get("/", (req, res) => {
   if (req.user) {
-    res.render("index", { user: req.user });
+    res.render("mainpage", { user: req.user });
   } else {
     res.redirect("/login");
   }
