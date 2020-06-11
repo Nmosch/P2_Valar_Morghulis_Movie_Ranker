@@ -37,6 +37,12 @@
     background-color: maroon;
     border-color: green; */
 }
+.cardImg{
+    opacity: .5;
+}
+.cardImg:hover{
+    opacity: 1;
+}
 body{
     background-image: url("/imgs/mainbg.jfif");
     background-size: cover;
