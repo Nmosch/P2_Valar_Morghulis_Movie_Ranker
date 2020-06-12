@@ -58,7 +58,7 @@ router.post(
       const token = jwt.sign(JSON.stringify(payload), jwtSecret.secret);
 
       res.cookie("jwt", token, { httpOnly: true, secure: false });
-      res.redirect("/");
+      res.redirect("/movies");
     });
   }
 );
