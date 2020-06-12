@@ -34,7 +34,7 @@ $( document ).ready(function() {
 
     };
    function postRating(){
-       let getRating = 
+       let getRating = $("#firstMovieRating").val()
    }
     $("#saveOptions").click(function(){
         // console.log("Working")
@@ -42,6 +42,4 @@ $( document ).ready(function() {
         newMovie();
         getMovie();
     })
-
-  
 });
