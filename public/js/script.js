@@ -41,4 +41,17 @@ $( document ).ready(function() {
         newMovie();
         getMovie();
     })
+
+    // login button redirecting to movies mainpage
+    $("#login").click(function(){
+        console.log("working")
+        window.location.href = "/movies"
+    })
+    $("#signUp").click(function(){
+        console.log("working")
+        window.location.href = "/movies"
+    })
+
+    
+
 });
