@@ -24,7 +24,7 @@ $( document ).ready(function() {
     function getMovie(){
         let getMovie = $("#addMovies").val().trim()
         let query =  "https://www.omdbapi.com/?t=" + getMovie + "&apikey=trilogy"
-        $.ajax({
+        return $.ajax({
             url:query,
             method:"GET"
         })
@@ -33,15 +33,14 @@ $( document ).ready(function() {
         });
 
     };
-    function moviePoster(){
-        
-    }
+   function postRating(){
+       let getRating = $("#firstMovieRating").val()
+   }
     $("#saveOptions").click(function(){
         // console.log("Working")
         event.preventDefault()
         newMovie();
         getMovie();
     })
-
 
 });

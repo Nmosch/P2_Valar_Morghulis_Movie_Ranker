@@ -11,9 +11,11 @@ router.use(passport.session());
 router.get("/movies", async (req, res) => {
   try {
     if (req.user) {
-      const data = await db.user.findAll();
+      let data = await db.user.findAll();
+      
+      const dataGenre = await db.genre.findAll();
+      res.render("mainpage", { users: data, genre: dataGenre });
     
-      res.render("mainpage", { users: data });
     } else {
       res.redirect("/login");
     }
