@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-router.get("/rating",async(req,res)=>{ 
+router.get("/movies",async(req,res)=>{ 
     try {
         const data = await db.rating.findAll();
-        res.render("rating", {ratings:data})
+        res.render("mainpage", {ratings:data})
     } catch (error) {
         console.error(error);
         res.status(500).send();
