@@ -9,12 +9,10 @@ $( document ).ready(function() {
 
     function newMovie(){
         const genreName = $("#selectedGenreOne").text()
-        
         let newMovie = {
             title: $("#addMovies").val().trim().toUpperCase(),
             genreId: parseInt($("#"+genreName).attr("data-id"))
         }
-        console.log(`This is new`,newMovie)
         $.ajax("/api/movies",{
             method:"POST",
             data: newMovie
@@ -34,6 +32,9 @@ $( document ).ready(function() {
             console.log(res)
         });
 
+    };
+    function moviePoster(){
+        
     }
     $("#saveOptions").click(function(){
         // console.log("Working")
@@ -51,7 +52,5 @@ $( document ).ready(function() {
         console.log("working")
         window.location.href = "/movies"
     })
-
-    
 
 });
