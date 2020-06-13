@@ -12,10 +12,11 @@ $( document ).ready(function() {
         let newMovie = {
             title: $("#addMovies").val().trim().toUpperCase(),
             genreId: parseInt($("#"+genreName).attr("data-id")),
-            rating:$("#selectedRatingOne").text(),
+            rating: $("#selectedRatingOne").text(),    
+            userId: parseInt($("#userNameHere").attr("data-id")),
             moviePoster:res.Poster
-            
         }
+        console.log(newMovie);
         $.ajax("/api/movies",{
             method:"POST",
             data: newMovie
@@ -34,8 +35,8 @@ $( document ).ready(function() {
         $.ajax("/api/rating", {
             method: "POST",
             data: newRating
-        }).then(() => {
-            console.log("Rated New Movie")
+        }).then((data) => {
+            console.log("Rated New Movie",data.id);
             // location.reload()
         })
     };
@@ -48,7 +49,7 @@ $( document ).ready(function() {
             method:"GET"
         })
         .then(res=>{
-            console.log(res)
+            console.log(res);
             newMovie(res)
         });
     };
@@ -58,6 +59,19 @@ $( document ).ready(function() {
         event.preventDefault()
         // newMovie();
         getMovie();
+        
+    })
+
+    function grabComedyMovies(){
+        $.ajax("/api/movies/genre/1", {
+            method: "GET"
+        }).then((res)=>{
+            console.log(res)
+        })
+    }
+    $("#comedyMovies").click(function(){
+        event.preventDefault();
+        grabComedyMovies();
     })
 
 });

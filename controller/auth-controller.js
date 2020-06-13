@@ -47,7 +47,7 @@ router.post(
   (req, res) => {
     const payload = {
       email: req.user.email,
-      expires: Date.now() + parseInt(60000)
+      expires: Date.now() + parseInt(6000000)
     };
 
     req.login(payload, { session: false }, error => {
@@ -70,7 +70,7 @@ router.get("/signup", (req, res) => {
 router.post(
   "/signup",
   passport.authenticate("local-signup", {
-    successRedirect: "/",
+    successRedirect: "/movies",
     failureRedirect: "/signup",
     failureFlash: true
   })
@@ -86,7 +86,7 @@ router.get("/logout", async (req, res) => {
 
   req.logout();
   res.clearCookie("jwt");
-  res.redirect("/");
+  res.redirect("/login");
 });
 
 module.exports = router;
