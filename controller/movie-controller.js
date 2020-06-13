@@ -25,6 +25,20 @@ router.get("/api/movies/:id", async (req, res) => {
         res.status(500).send();
     }
 });
+router.get("/api/movies/genre/:id", async(req, res)=>{
+    try{
+
+        const data = await db.movie.findAll({
+            where: {
+                genreId: req.params.id
+            }
+        })
+        res.json(data)
+    }catch (error){
+        console.log(error);
+        res.status(500).send();
+    }
+})
 
 router.post("/api/movies",  (req, res) => {
     try {
