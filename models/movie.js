@@ -4,6 +4,9 @@ module.exports = (sequelize, Datatypes) =>{
         title: {
             type: Datatypes.STRING,
             allowNull: false
+        },
+        moviePoster: {
+            type: Datatypes.STRING,
         }
     },
     {
