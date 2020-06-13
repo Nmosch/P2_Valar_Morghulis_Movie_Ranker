@@ -7,12 +7,14 @@ $( document ).ready(function() {
         $("#selectedRatingOne").text($(this).text())
     })
 
-    function newMovie(){
+    function newMovie(res){
         const genreName = $("#selectedGenreOne").text()
         let newMovie = {
             title: $("#addMovies").val().trim().toUpperCase(),
             genreId: parseInt($("#"+genreName).attr("data-id")),
-            // rating:$("#selectedRatingOne").text()
+            rating:$("#selectedRatingOne").text(),
+            moviePoster:res.Poster
+            
         }
         $.ajax("/api/movies",{
             method:"POST",
@@ -47,13 +49,14 @@ $( document ).ready(function() {
         })
         .then(res=>{
             console.log(res)
+            newMovie(res)
         });
     };
    
     $("#saveOptions").click(function(){
         // console.log("Working")
         event.preventDefault()
-        newMovie();
+        // newMovie();
         getMovie();
     })
 
