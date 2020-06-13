@@ -57,4 +57,16 @@ $( document ).ready(function() {
         getMovie();
     })
 
+    function grabComedyMovies(){
+        $.ajax("/api/movies/genre/1", {
+            method: "GET"
+        }).then((res)=>{
+            console.log(res)
+        })
+    }
+    $("#comedyMovies").click(function(){
+        event.preventDefault();
+        grabComedyMovies();
+    })
+
 });
