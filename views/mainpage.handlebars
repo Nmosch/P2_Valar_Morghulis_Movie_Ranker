@@ -47,15 +47,15 @@
     <div class="container" id="movieLists">
         <div class="row">
             <!-- Movie Input Here -->
-            <div class="col-md-3"></div>
-            <div class="col-md-2">
+            <div class="col-sm-1 col-md-3"></div>
+            <div class="col-sm-3 col-md-2">
                 <div class="input-group mb-3 movie-name-input">
                     <input type="text" class="form-control" placeholder="Movie Name" aria-label="Movie Name"
                         id="addMovies">
                 </div>
             </div>
             <!-- Movie Genre Here -->
-            <div class="col-md-2">
+            <div class="col-sm-3 col-md-2 mr-3">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <button class="btn btn-outline-danger dropdown-toggle" type="button" data-toggle="dropdown"
@@ -70,7 +70,7 @@
                 </div>
             </div>
             <!-- Rating Drop Down Here -->
-            <div class="col-md-2">
+            <div class="col-sm-3 col-md-2">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <button class="btn btn-outline-danger dropdown-toggle" type="button" data-toggle="dropdown"
@@ -86,7 +86,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3"></div>
+            <div class="col-sm-1 col-md-3"></div>
         </div>
     </div>
     {{!-- Save Button here --}}
@@ -105,83 +105,31 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-2 text-center">
+            <div class="col-sm-2 col-md-2 text-center">
                 <button id="comedyMovies" type="button" class="btn btn-danger">Comedy</button>
             </div>
-            <div class="col-md-2 text-center">
+            <div class="col-sm-2 col-md-2 text-center">
                 <button id="dramaMovies" type="button" class="btn btn-danger">Drama</button>
             </div>
-            <div class="col-md-2 text-center">
-                <button id="thrillMovies" type="button" class="btn btn-warning">Horror/Thriller</button>
+            <div class="col-sm-2 col-md-2 text-center">
+                <button id="thrillMovies" type="button" class="btn btn-warning">Horror</button>
             </div>
-            <div class="col-md-2 text-center">
-                <button id="fantMovies" type="button" class="btn btn-warning">SciFi/Fantasy</button>
+            <div class="col-sm-2 col-md-2 text-center">
+                <button id="fantMovies" type="button" class="btn btn-warning">SciFi</button>
             </div>
-            <div class="col-md-2 text-center">
+            <div class="col-sm-2 col-md-2 text-center">
                 <button id="actionMovies" type="button" class="btn btn-danger">Action</button>
             </div>
-            <div class="col-md-2 text-center">
+            <div class="col-sm-2 col-md-2 text-center">
                 <button id="romanceMovies" type="button" class="btn btn-danger">Romance</button>
             </div>
         </div>
     </div>
     <div class="container mt-5">
         <div id="firstRow" class="row">
-            {{!-- <div id="firstCard" class="col-md-4">
-                {{!-- <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                    <img src="https://via.placeholder.com/150" class="card-img-top cardImg" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Movie Name Here</h5>
-                        <p class="card-text">Rating: Here (image would come from omdb api?)</p>
-                    </div>
-                </div> --}}
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                    <img src="https://via.placeholder.com/150" class="card-img-top cardImg" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Movie Name Here</h5>
-                        <p class="card-text">Rating: Here (image would come from omdb api?)</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                    <img src="https://via.placeholder.com/150" class="card-img-top cardImg" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Movie Name Here</h5>
-                        <p class="card-text">Rating: Here (image would come from omdb api?)</p>
-                    </div>
-                </div>
-            </div> --}}
+          
         </div>
-        {{!-- <div class="row">
-            {{!-- <div class="col-md-4">
-                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                    <img src="https://via.placeholder.com/150" class="card-img-top cardImg" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Movie Name Here</h5>
-                        <p class="card-text">Rating: Here (image would come from omdb api?)</p>
-                    </div>
-                </div>
-            </div> --}}
-            {{!-- <div class="col-md-4">
-                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                    <img src="https://via.placeholder.com/150" class="card-img-top cardImg" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Movie Name Here</h5>
-                        <p class="card-text">Rating: Here (image would come from omdb api?)</p>
-                    </div>
-                </div>
-            </div> --}}
-            {{!-- <div class="col-md-4">
-                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                    <img src="https://via.placeholder.com/150" class="card-img-top cardImg" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Movie Name Here</h5>
-                        <p class="card-text">Rating: Here (image would come from omdb api?)</p>
-                    </div>
-                </div>
-            </div> --}}
-        </div> --}}
+        <div id="secondRow" class="row">
+            
+        </div>
     </div>
