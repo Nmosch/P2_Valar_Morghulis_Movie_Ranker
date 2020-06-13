@@ -86,7 +86,7 @@ router.get("/logout", async (req, res) => {
 
   req.logout();
   res.clearCookie("jwt");
-  res.redirect("/");
+  res.redirect("/login");
 });
 
 module.exports = router;

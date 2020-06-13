@@ -20,7 +20,7 @@ $( document ).ready(function() {
         }) .then((res)=>{
             console.log("Added New Movie", res)
             postRating(res)
-            // location.reload()
+            location.reload()
         })
     }
     function postRating(res) {
@@ -33,7 +33,7 @@ $( document ).ready(function() {
             method: "POST",
             data: newRating
         }).then(() => {
-            console.log("Rated New Movie")
+            console.log("Rated New Movie");
             // location.reload()
         })
     };
@@ -47,6 +47,7 @@ $( document ).ready(function() {
         })
         .then(res=>{
             console.log(res)
+
         });
     };
    
@@ -55,6 +56,7 @@ $( document ).ready(function() {
         event.preventDefault()
         newMovie();
         getMovie();
+        
     })
 
 });
