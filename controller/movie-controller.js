@@ -40,10 +40,35 @@ router.get("/api/movies/genre/:id", async(req, res)=>{
     }
 })
 
-router.post("/api/movies", async (req, res) => {
+router.post("/api/movies",  (req, res) => {
     try {
-        const data = await db.movie.create(req.body);
-            res.json(data);
+
+        db.movie.findAll({where: {
+            title: req.body.title
+        }}).then(function(results) {
+            let pos = results.map(function(e) { return e.title; }).indexOf(req.body.title);
+            if (pos === -1){
+                db.movie.create({title: req.body.title,
+                                genreId: req.body.genreId})
+                .then(function(data){
+                  res.json(data);
+                });
+            } else {
+                console.log(req.body);
+                db.rating.create({rating: req.body.rating,
+                                movieId: results[0].id,
+                                userId: req.body.userId})
+                .then(function(){
+                    res.json(results[0].id);
+                });
+                
+            }
+            
+            
+        });
+
+    
+      
         // console.log(`req.body`, req.body);
         // const findMovieTitle = await db.movie.findAll({ where: { title: req.body.title } })
 

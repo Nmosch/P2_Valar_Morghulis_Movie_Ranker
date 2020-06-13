@@ -12,6 +12,8 @@ $( document ).ready(function() {
         let newMovie = {
             title: $("#addMovies").val().trim().toUpperCase(),
             genreId: parseInt($("#"+genreName).attr("data-id")),
+            rating: $("#selectedRatingOne").text(),    
+            userId: parseInt($("#userNameHere").attr("data-id"))
             // rating:$("#selectedRatingOne").text()
         }
         $.ajax("/api/movies",{
@@ -20,7 +22,7 @@ $( document ).ready(function() {
         }) .then((res)=>{
             console.log("Added New Movie", res)
             postRating(res)
-            location.reload()
+            // location.reload()
         })
     }
     function postRating(res) {
@@ -32,8 +34,8 @@ $( document ).ready(function() {
         $.ajax("/api/rating", {
             method: "POST",
             data: newRating
-        }).then(() => {
-            console.log("Rated New Movie");
+        }).then((data) => {
+            console.log("Rated New Movie",data.id);
             // location.reload()
         })
     };
