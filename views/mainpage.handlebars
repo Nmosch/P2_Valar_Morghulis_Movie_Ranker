@@ -16,12 +16,12 @@
                     <a class="nav-link second-navbar-button">Welcome</a>
                 </li>
                 <li class="nav-item active">
-                    {{#each users}}
-                    <a id="userNameHere" class="nav-link third-navbar-button">{{email}}</a>
+                   {{#each users}}
+                    <a id="userNameHere" class="nav-link third-navbar-button" data-id={{id}}> {{email}}</a>
                     {{/each}}
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link fourth-navbar-button" href="#">Logout</a>
+                    <a class="nav-link fourth-navbar-button" href="/logout">Logout</a>
                 </li>
             </ul>
         </div>

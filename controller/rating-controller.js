@@ -25,7 +25,7 @@ router.get("/api/rating", async(req,res)=>{
     try {
       const data = await db.rating.findAll({
         where: {
-          user_id: req.params.is
+          user_id: req.params.id
         }
       });
       res.json(data);
@@ -37,7 +37,7 @@ router.get("/api/rating", async(req,res)=>{
   
   router.get("/api/movies/rating/:id",async()=>{
     try {
-        const data = await db.rating.finall({
+        const data = await db.rating.findAll({
             where:{
                 movie_id: req.params.id
             }

@@ -11,16 +11,33 @@ $( document ).ready(function() {
         const genreName = $("#selectedGenreOne").text()
         let newMovie = {
             title: $("#addMovies").val().trim().toUpperCase(),
-            genreId: parseInt($("#"+genreName).attr("data-id"))
+            genreId: parseInt($("#"+genreName).attr("data-id")),
+            // rating:$("#selectedRatingOne").text()
         }
         $.ajax("/api/movies",{
             method:"POST",
             data: newMovie
-        }) .then(()=>{
-            console.log("Rated New Movie")
+        }) .then((res)=>{
+            console.log("Added New Movie", res)
+            postRating(res)
             // location.reload()
         })
     }
+    function postRating(res) {
+        let newRating = {
+            rating: $("#selectedRatingOne").text(),
+            movieId: res.id,
+            userId: parseInt($("#userNameHere").attr("data-id"))
+        };
+        $.ajax("/api/rating", {
+            method: "POST",
+            data: newRating
+        }).then(() => {
+            console.log("Rated New Movie")
+            // location.reload()
+        })
+    };
+
     function getMovie(){
         let getMovie = $("#addMovies").val().trim()
         let query =  "https://www.omdbapi.com/?t=" + getMovie + "&apikey=trilogy"
@@ -31,11 +48,8 @@ $( document ).ready(function() {
         .then(res=>{
             console.log(res)
         });
-
     };
-   function postRating(){
-       let getRating = $("#firstMovieRating").val()
-   }
+   
     $("#saveOptions").click(function(){
         // console.log("Working")
         event.preventDefault()
