@@ -2,27 +2,27 @@
 [![Build Status](https://travis-ci.com/sdanyalk/auth-project-two.svg?branch=master)](https://travis-ci.com/sdanyalk/auth-project-two)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](license)
 
-# Authentication for Project Two
-This project showcases how to add authentication using `passport.js` library. Template for this project is the starter template given for Project Two.
+# Project Title: Rotton_Potatos :raised_hands:
+##### Team Name: Valar_Morghulis
+##### Team Members: Nicholas, Michelle, and Nathaniel
+- Movie Rater
 
-`passport.js` provides many authentication strategies. This project makes use of **local** username and password authentication strategy. More details about this strategy can be found [here](http://www.passportjs.org/packages/passport-local/).
+## Table of Contents:
+  - [User Story](#user-story-speech_balloon)
+  - [Features](#features)
+  - [Installation](#installation-floppy_disk)
+  - [NPM Packages](#npm-packages)
+  - [Heroku Deployment](#heroku-deployment)
+  - [Libraries used](#libraries-used)
+  - [License](#license)
 
-Passport Local strategy expects you to have username and password stored in your database. In this project I'm using email address as a username. The passwords are stored as a hash using **bcrypt**.
-
-**Version 2** of this project includes securing the API routes by using passport js **JWT strategy**. More about JWT-passport strategy can be found [here](http://www.passportjs.org/packages/passport-jwt/).
-
+### User Story :speech_balloon:
+  - 
+  ---
+### Features
+- 
 ---
-
-## Usage
-
-You are most welcome to use this project as a starter code for your project-2. You have my full permission, and blessing.
-
-To show this, I've published this project as a github *template* project. On the top, just before `Clone or download` button you will see a green `Use this template` button. This will allow you to create your own project based off this starter code project. So instead of cloning or forking, that is what I will recommend doing.
-
----
-
-## Installation
-
+###  Installation :floppy_disk::
 1. Clone this repository.
     ```
     git clone https://github.com/sdanyalk/auth-project-two.git
@@ -53,7 +53,7 @@ To show this, I've published this project as a github *template* project. On the
     ```
 ---
 
-## NPM Packages
+### NPM Packages
 
 | Package | Documentation |
 | ----------- | ----------- |
@@ -69,35 +69,24 @@ To show this, I've published this project as a github *template* project. On the
 
 ---
 
-## Heroku Deployment
+### Heroku Deployment
 
 This project is deployed on Heroku. The link to web app is:
 
 [https://auth-project-two.herokuapp.com/](https://auth-project-two.herokuapp.com/)
 
 ---
-
-## Nice to have
-
-- [x] Secure the API endpoints by using JWT strategy in passport js.
-- [ ] Add Jest unit tests.
-
----
-
-## Troubleshooting
-
-| Issue | Resolution
-| ----------- | ----------- |
-| `bcrypt` node package failing to install on Windows 7/10 machines. | From the `bcrypt` documentation, there are extra installations required on Windows OS to make `bcrypt` work. This is listed under the [Dependencies](https://www.npmjs.com/package/bcrypt#dependencies) section. To complete the required Windows dependencies install the tools as mentioned [here](https://github.com/kelektiv/node.bcrypt.js/wiki/Installation-Instructions#microsoft-windows). Complete the previous step in GitBash (run as administrator).|
+### Libraries used
+-  CSS Frameworks:
+> - Bootstrap
+- Server-side API used:
+> - OMDB :http://www.omdbapi.com/
+- Third-Party API used
+> - jQuery
+> - chart.js: https://www.chartjs.org/ 
 
 ---
 
-## Issues/Bugs
-
-Please report any bugs [here](https://github.com/sdanyalk/auth-project-two/issues).
-
----
-
-## License
+### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -55,23 +55,9 @@ $( document ).ready(function() {
     };
    
     $("#saveOptions").click(function(){
-        // console.log("Working")
         event.preventDefault()
-        // newMovie();
         getMovie();
         
-    })
-
-    function grabComedyMovies(){
-        $.ajax("/api/movies/genre/1", {
-            method: "GET"
-        }).then((res)=>{
-            console.log(res)
-        })
-    }
-    $("#comedyMovies").click(function(){
-        event.preventDefault();
-        grabComedyMovies();
     })
 
 });
