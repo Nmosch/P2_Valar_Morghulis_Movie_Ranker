@@ -28,11 +28,12 @@ router.get("/api/movies/:id", async (req, res) => {
 router.get("/api/movies/genre/:id", async(req, res)=>{
     try{
 
-        const data = await db.movie.findAll({
+        const data = await db.movie.findAndCountAll({
             where: {
                 genreId: req.params.id
             }
         });
+        console.log(data.count)
         res.json(data);
     }catch (error){
         console.log(error);
@@ -47,9 +48,11 @@ router.post("/api/movies",  (req, res) => {
             title: req.body.title
         }}).then(function(results) {
             let pos = results.map(function(e) { return e.title; }).indexOf(req.body.title);
-            if (pos === -1){
+            if (pos === -1){ 
+                const defaultPoster= "https://critics.io/img/movies/poster-placeholder.png"
+            
                 db.movie.create({title: req.body.title,
-                                moviePoster: req.body.moviePoster,
+                                moviePoster: req.body.moviePoster ==="N/A" ? defaultPoster : req.body.moviePoster,
                                 genreId: req.body.genreId})
                 .then(function(data){
                   res.json(data);
