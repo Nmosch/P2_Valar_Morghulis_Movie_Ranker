@@ -16,9 +16,9 @@ router.get("/api/genre", async (req, res) => {
 
 router.get("/api/genre/:id", async (req, res) => {
     try {
-        const data = await db.genre.findOne({
+        const data = await db.movie.findAndCountAll({
             where: {
-                id: req.params.id
+                genreId: req.params.id
             }
         });
 
