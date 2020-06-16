@@ -43,10 +43,6 @@
 .cardImg:hover{
     opacity: 1;
 }
-canvas{
-	-webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-}
 body{
     background-image: url("/imgs/mainbg.jfif");
     background-size: cover;
