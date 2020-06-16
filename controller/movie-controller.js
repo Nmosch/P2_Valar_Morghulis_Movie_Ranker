@@ -65,10 +65,6 @@ router.get("/api/movies/genre/:id", async (req, res) => {
 
         console.log(data.count)
         res.json(data);
-    }catch (error){
-
-        console.log(error);
-        res.status(500).send();
     }
 });
 
