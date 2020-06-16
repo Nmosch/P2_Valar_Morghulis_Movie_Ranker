@@ -1,6 +1,6 @@
-$(document).ready(function () {
+  $(document).ready(function () {
 
-    const newUserEmail = $("#userEmail").val().trim();
+    const newUserEmail = $("#userEmail").val();
     const newUserPassword = $("#userPassword").val().trim();
 
     $("#submitBtn").on("click", newUser)
