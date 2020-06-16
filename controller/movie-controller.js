@@ -26,13 +26,16 @@ router.get("/api/movies/:id", async (req, res) => {
         res.status(500).send();
     }
 });
+
 router.get("/api/movies/genre/:id", async (req, res) => {
     try {
         const data = await db.movie.findAll({
+
             where: {
                 genreId: req.params.id
             }
         });
+
         const moviePosterInfo = [];
         const moviePush = async (data) => {
             let i;
@@ -52,8 +55,6 @@ router.get("/api/movies/genre/:id", async (req, res) => {
                 };
                 moviePosterInfo.push(movieIconInfo);
                 console.log("Movie Icon Info", movieIconInfo);
-                // console.log("Movie Poster Info", moviePosterInfo);
-
             }
             console.log("Movie Poster Info", moviePosterInfo);
             res.json(moviePosterInfo);
@@ -61,31 +62,31 @@ router.get("/api/movies/genre/:id", async (req, res) => {
         moviePush(data);
         
     } catch (error) {
+
+        console.log(data.count)
+        res.json(data);
+    }catch (error){
+
         console.log(error);
         res.status(500).send();
     }
 });
 
-// router.get("api/movies/rating")
-
 router.post("/api/movies", (req, res) => {
     try {
-
-        db.movie.findAll({
-            where: {
-                title: req.body.title
-            }
-        }).then(function (results) {
-            let pos = results.map(function (e) { return e.title; }).indexOf(req.body.title);
-            if (pos === -1) {
-                db.movie.create({
-                    title: req.body.title,
-                    moviePoster: req.body.moviePoster,
-                    genreId: req.body.genreId
-                })
-                    .then(function (data) {
-                        res.json(data);
-                    });
+        db.movie.findAll({where: {
+            title: req.body.title
+        }}).then(function(results) {
+            let pos = results.map(function(e) { return e.title; }).indexOf(req.body.title);
+            if (pos === -1){ 
+                const defaultPoster= "https://critics.io/img/movies/poster-placeholder.png"
+            
+                db.movie.create({title: req.body.title,
+                                moviePoster: req.body.moviePoster ==="N/A" ? defaultPoster : req.body.moviePoster,
+                                genreId: req.body.genreId})
+                .then(function(data){
+                  res.json(data);
+                });
             } else {
                 console.log(req.body);
                 db.rating.create({

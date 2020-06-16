@@ -1,26 +1,29 @@
-$( document ).ready(function() {
-    $("#firstMovieGenre a").click(function(){
+$(document).ready(function () {
+    $("#firstMovieGenre a").click(function () {
         $("#selectedGenreOne").text($(this).text())
     })
 
-    $("#firstMovieRating a").click(function(){
+    $("#firstMovieRating a").click(function () {
         $("#selectedRatingOne").text($(this).text())
     })
 
-    function newMovie(res){
+    function newMovie(res) {
         const genreName = $("#selectedGenreOne").text()
+    
+
         let newMovie = {
             title: $("#addMovies").val().trim().toUpperCase(),
-            genreId: parseInt($("#"+genreName).attr("data-id")),
-            rating: $("#selectedRatingOne").text(),    
+            genreId: parseInt($("#" + genreName).attr("data-id")),
+            rating: $("#selectedRatingOne").text(),
             userId: parseInt($("#userNameHere").attr("data-id")),
-            moviePoster:res.Poster
+            moviePoster: res.Poster
+
         }
         console.log(newMovie);
-        $.ajax("/api/movies",{
-            method:"POST",
+        $.ajax("/api/movies", {
+            method: "POST",
             data: newMovie
-        }) .then((res)=>{
+        }).then((res) => {
             console.log("Added New Movie", res)
             postRating(res)
             // location.reload()
@@ -36,28 +39,28 @@ $( document ).ready(function() {
             method: "POST",
             data: newRating
         }).then((data) => {
-            console.log("Rated New Movie",data.id);
+            console.log("Rated New Movie", data.id);
             // location.reload()
         })
     };
 
-    function getMovie(){
+    function getMovie() {
         let getMovie = $("#addMovies").val().trim()
-        let query =  "https://www.omdbapi.com/?t=" + getMovie + "&apikey=trilogy"
+        let query = "https://www.omdbapi.com/?t=" + getMovie + "&apikey=trilogy"
         return $.ajax({
-            url:query,
-            method:"GET"
+            url: query,
+            method: "GET"
         })
-        .then(res=>{
-            console.log(res);
-            newMovie(res)
-        });
+            .then(res => {
+                console.log(res);
+                newMovie(res)
+            });
     };
-   
-    $("#saveOptions").click(function(){
+
+    $("#saveOptions").click(function () {
         event.preventDefault()
         getMovie();
-        
+
     })
 
 });
