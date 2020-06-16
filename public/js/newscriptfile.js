@@ -15,7 +15,7 @@ $(document).ready(function () {
                 var newRatingP = $("<p class='card-text'></p>")
                 $(newHeader).append(movie.title)
                 $(newRatingP).append(movie.rating)
-                $(newCardImage).attr("src", movie.moviePoster)
+                $(newCardImage).attr("src", movie.poster)
                 $(newCardImage).attr("alt", movie.title)
                 $(newCardBody).append(newHeader, newRatingP)
                 $(newCard).append(newCardImage, newCardBody)
