@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "SummerFalls13",
     "database": "movie_rater_db",
     "host": "localhost",
     "dialect": "mysql"
