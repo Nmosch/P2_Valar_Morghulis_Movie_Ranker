@@ -35,7 +35,6 @@ router.get("/api/movies/genre/:id", async (req, res) => {
                 genreId: req.params.id
             }
         });
-
         const moviePosterInfo = [];
         const moviePush = async (data) => {
             let i;
@@ -62,9 +61,8 @@ router.get("/api/movies/genre/:id", async (req, res) => {
         moviePush(data);
         
     } catch (error) {
-
-        console.log(data.count)
-        res.json(data);
+        console.log(error);
+        res.status(500).send();
     }
 });
 
@@ -75,7 +73,7 @@ router.post("/api/movies", (req, res) => {
         }}).then(function(results) {
             let pos = results.map(function(e) { return e.title; }).indexOf(req.body.title);
             if (pos === -1){ 
-                const defaultPoster= "https://critics.io/img/movies/poster-placeholder.png"
+                const defaultPoster= "https://critics.io/img/movies/poster-placeholder.png";
             
                 db.movie.create({title: req.body.title,
                                 moviePoster: req.body.moviePoster ==="N/A" ? defaultPoster : req.body.moviePoster,

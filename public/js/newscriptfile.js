@@ -6,8 +6,7 @@ $(document).ready(function () {
         }).then((res) => {
             console.log(res);
             $("#firstRow").empty();
-            let row = res.rows
-            const top6 = row.slice(0,6);
+            const top6 = res.slice(0,6);
             top6.forEach(movie => {
                 var newBlock = $("<div class='col-md-4'>")
                 var newCard = $("<div class='card text-white bg-dark mb-3' style='max-width: 18rem;'></div")
