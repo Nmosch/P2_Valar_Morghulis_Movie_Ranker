@@ -5,10 +5,9 @@
 # Project Title: Rotton_Potatos :raised_hands:
 ##### Team Name: Valar_Morghulis
 ##### Team Members: Nicholas, Michelle, and Nathaniel
-- Movie Rater
+- A simple web app to rate movie of your choice. 
 
 ## Table of Contents:
-  - [User Story](#user-story-speech_balloon)
   - [Features](#features)
   - [Installation](#installation-floppy_disk)
   - [NPM Packages](#npm-packages)
@@ -16,11 +15,11 @@
   - [Libraries used](#libraries-used)
   - [License](#license)
 
-### User Story :speech_balloon:
-  - 
-  ---
+
 ### Features
-- 
+- Able add and give rating on the movie
+- Able to see top 6 movies in each genre
+- Able to see the average movie rating of the movie
 ---
 ###  Installation :floppy_disk::
 1. Clone this repository.
@@ -66,14 +65,14 @@
 | `bcrypt` | [BCrypt](https://www.npmjs.com/package/bcrypt) |
 | `connect-flash` | [Connect Flash for Express](https://www.npmjs.com/package/connect-flash) |
 | `dotenv` | [Dotenv](https://www.npmjs.com/package/dotenv) |
-
+| `chart.js`| [chart.js](https://www.npmjs.com/package/chart.js)|
 ---
 
 ### Heroku Deployment
 
 This project is deployed on Heroku. The link to web app is:
 
-[https://auth-project-two.herokuapp.com/](https://auth-project-two.herokuapp.com/)
+[Rotton Potatos](https://rotten-potatoes-vm3.herokuapp.com/login)
 
 ---
 ### Libraries used
