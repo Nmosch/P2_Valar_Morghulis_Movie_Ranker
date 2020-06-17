@@ -77,15 +77,18 @@ router.post(
 );
 
 router.get("/logout", async (req, res) => {
-  const record = {
-    status: "LogOut",
-    userId: req.user.dataValues.id
-  };
+  if (req.user) {
+    const record = {
+      status: "LogOut",
+      userId: req.user.dataValues.id
+    };
 
-  await db.history.create(record);
+    await db.history.create(record);
 
-  req.logout();
-  res.clearCookie("jwt");
+    req.logout();
+    res.clearCookie("jwt");
+  }
+
   res.redirect("/login");
 });
 

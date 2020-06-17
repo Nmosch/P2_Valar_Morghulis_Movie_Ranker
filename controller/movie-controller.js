@@ -56,6 +56,9 @@ router.get("/api/movies/genre/:id", async (req, res) => {
                 moviePosterInfo.push(movieIconInfo);
                 console.log("Movie Icon Info", movieIconInfo);
             }
+            moviePosterInfo.sort((a,b) =>{
+                return b.rating - a.rating;
+            });
             console.log("Movie Poster Info", moviePosterInfo);
             res.json(moviePosterInfo);
         };
