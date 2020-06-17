@@ -1,11 +1,9 @@
-$(document).ready(function () {
+  $(document).ready(function () {
 
     const newUserEmail = $("#userEmail").val();
-    const newUserPassword = $("#userPassword").val().trim();
+    const newUserPassword = $("#userPassword").val();
 
     $("#submitBtn").on("click", newUser)
-    console.log(newUserEmail);
-    console.log(newUserPassword);
     function newUser() {
         $.ajax({
             url: "/api/users",
