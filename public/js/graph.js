@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     function seeChart(){
 
-        $.ajax("/api/genre/1",{ 
+        $.ajax("/api/genre",{ 
             method: 'GET'
         }).then((res)=>{
             console.log(res)
@@ -19,7 +19,7 @@ $(document).ready(function(){
                     labels: ['Comedy', 'Drama', 'Action', 'Romance', 'Horror', 'SciFi'],
                     datasets: [{
                         label: 'Quantity',
-                        data: [20, 12, 18, 22, 9, 9], //[res.whatever]
+                        data: res, //[res.whatever]
                         backgroundColor: [
                             'rgba(214, 40, 40, 0.7)',
                             'rgba(247, 127, 0, 0.7)',

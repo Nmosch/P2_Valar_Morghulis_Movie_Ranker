@@ -5,9 +5,21 @@ const db = require("../models");
 
 router.get("/api/genre", async (req, res) => {
     try {
-        const data = await db.genre.findAll();
-
-        res.json(data);
+        const genreArray = [];
+        const genrePush = async () =>{
+            let i;
+            for (i=1; i < 7; i++){
+                const data = await db.movie.findAndCountAll({
+                    where:{genreId: i}
+                });
+                let count = data.count;
+                console.log(count);
+                genreArray.push(count);
+            }
+            console.log(genreArray);
+            res.json(genreArray);
+        };
+        genrePush();    
     } catch (error) {
         console.log(error);
         res.status(500).send();
