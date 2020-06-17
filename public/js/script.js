@@ -15,7 +15,6 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(res => {
-                console.log(res);
                 newMovie(res)
             });
     };
@@ -33,7 +32,6 @@ $(document).ready(function () {
             method: "POST",
             data: newMovie
         }).then((res) => {
-            console.log("Added New Movie", res)
             postRating(res)
             // location.reload()
         })
@@ -49,11 +47,9 @@ $(document).ready(function () {
             data: newRating
         }).then((data) => {
             console.log("Rated New Movie", data.id);
-            // location.reload()
+            location.reload()
         })
     };
-
-    
 
     $("#saveOptions").click(function () {
         event.preventDefault()
@@ -64,10 +60,8 @@ $(document).ready(function () {
         $.ajax("/api/movies/genre/" + genreId, {
             method: "GET"
         }).then((res) => {
-            console.log(res);
             $("#firstRow").empty();
-            let row = res.rows
-            const top6 = row.slice(0,6);
+            const top6 = res.slice(0,6);
             top6.forEach(movie => {
                 var newBlock = $("<div class='col-md-4'>")
                 var newCard = $("<div class='card text-white bg-dark mb-3' style='max-width: 18rem;'></div")
@@ -77,7 +71,7 @@ $(document).ready(function () {
                 var newRatingP = $("<p class='card-text'></p>")
                 $(newHeader).append(movie.title)
                 $(newRatingP).append(movie.rating)
-                $(newCardImage).attr("src", movie.moviePoster)
+                $(newCardImage).attr("src", movie.poster)
                 $(newCardImage).attr("alt", movie.title)
                 $(newCardBody).append(newHeader, newRatingP)
                 $(newCard).append(newCardImage, newCardBody)
