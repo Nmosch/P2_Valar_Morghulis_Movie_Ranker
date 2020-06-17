@@ -9,7 +9,7 @@ $(document).ready(function () {
     })
     function getMovie() {
         let getMovie = $("#addMovies").val().trim()
-        let query = "https://www.omdbapi.com/?t=" + getMovie + "&apikey=trilogy"
+        let query = "https://www.omdbapi.com/?t=" + getMovie + "&apikey=64581578"
         return $.ajax({
             url: query,
             method: "GET"
@@ -33,7 +33,6 @@ $(document).ready(function () {
             data: newMovie
         }).then((res) => {
             postRating(res)
-            // location.reload()
         })
     }
     function postRating(res) {
@@ -53,7 +52,12 @@ $(document).ready(function () {
 
     $("#saveOptions").click(function () {
         event.preventDefault()
-        getMovie();
+        if ($("#addMovies").val() === ""){
+            alert("Please enter a movie")
+        }else{
+            getMovie();
+        }
+        
     })
     function grabMovieByGenre(genreId) {
 
@@ -68,7 +72,7 @@ $(document).ready(function () {
                 var newCardImage = $("<img src='' class='card-img-top cardImg' alt=''>")
                 var newCardBody = $("<div class='card-body'></div")
                 var newHeader = $("<h5 class='card-title'></h5")
-                var newRatingP = $("<p class='card-text'></p>")
+                var newRatingP = $("<p class='card-text'>Rating: </p>")
                 $(newHeader).append(movie.title)
                 $(newRatingP).append(movie.rating)
                 $(newCardImage).attr("src", movie.poster)

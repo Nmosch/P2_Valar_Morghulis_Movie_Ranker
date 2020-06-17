@@ -13,6 +13,7 @@ router.get("/api/movies", async (req, res) => {
         res.status(500).send();
     }
 });
+
 router.get("/api/movies/:id", async (req, res) => {
     try {
         const data = await db.movie.findOne({
@@ -59,7 +60,6 @@ router.get("/api/movies/genre/:id", async (req, res) => {
             res.json(moviePosterInfo);
         };
         moviePush(data);
-        
     } catch (error) {
         console.log(error);
         res.status(500).send();
@@ -94,7 +94,6 @@ router.post("/api/movies", (req, res) => {
                     .catch(error => console.log(error));
             }
         });
-
     } catch (error) {
         console.log(`error for post`, error);
         res.status(500).send();
