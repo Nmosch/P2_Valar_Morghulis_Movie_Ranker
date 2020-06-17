@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.com/sdanyalk/auth-project-two.svg?branch=master)](https://travis-ci.com/sdanyalk/auth-project-two)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](license)
 
-# Project Title: Rotton_Potatos :raised_hands:
+# Project Title: Rotten_Potatos :raised_hands:
 ##### Team Name: Valar_Morghulis
 ##### Team Members: Nicholas, Michelle, and Nathaniel
 - A simple web app to rate movie of your choice. 
@@ -72,7 +72,7 @@
 
 This project is deployed on Heroku. The link to web app is:
 
-[Rotton Potatos](https://rotten-potatoes-vm3.herokuapp.com/login)
+[Rotten Potatos](https://rotten-potatoes-vm3.herokuapp.com/login)
 
 ---
 ### Libraries used
