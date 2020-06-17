@@ -33,7 +33,6 @@ router.get("/api/genre/:id", async (req, res) => {
                 genreId: req.params.id
             }
         });
-
         res.json(data);
     } catch (error) {
         console.log(error);

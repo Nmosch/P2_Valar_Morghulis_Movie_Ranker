@@ -6,7 +6,6 @@ $(document).ready(function(){
             method: 'GET'
         }).then((res)=>{
             console.log(res)
-            //res.count()
             let graph = $('#barGraph')
             
             Chart.defaults.global.defaultFontFamily = "Arial";
@@ -19,7 +18,7 @@ $(document).ready(function(){
                     labels: ['Comedy', 'Drama', 'Action', 'Romance', 'Horror', 'SciFi'],
                     datasets: [{
                         label: 'Quantity',
-                        data: res, //[res.whatever]
+                        data: res,
                         backgroundColor: [
                             'rgba(214, 40, 40, 0.7)',
                             'rgba(247, 127, 0, 0.7)',
@@ -61,6 +60,13 @@ $(document).ready(function(){
                     tooltips: {
                         enabled: true
                     },
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
                     animation: {
                         duration: 2000,
                         onProgress: function(animation){
@@ -73,10 +79,8 @@ $(document).ready(function(){
                         }
                     }
                 }
-            });
-    
+            });    
         })
-        
     }
     $("#seeChart").click(function(){
         seeChart();
