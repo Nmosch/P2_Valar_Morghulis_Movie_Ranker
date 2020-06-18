@@ -46,7 +46,6 @@ router.get("/api/movies/genre/:id", async (req, res) => {
                     poster: data[i].moviePoster,
                 };
                 const averageRating = await db.sequelize.query(`SELECT AVG(rating.rating) as "average_rating" FROM rating WHERE rating.movieId = ${movieIconInfo.id} GROUP BY rating.movieId`, { type: QueryTypes.SELECT });
-                console.log(averageRating);
                 movieIconInfo = {
                     id: data[i].id,
                     title: data[i].title,
@@ -54,12 +53,10 @@ router.get("/api/movies/genre/:id", async (req, res) => {
                     rating: averageRating[0].average_rating
                 };
                 moviePosterInfo.push(movieIconInfo);
-                console.log("Movie Icon Info", movieIconInfo);
             }
             moviePosterInfo.sort((a,b) =>{
                 return b.rating - a.rating;
             });
-            console.log("Movie Poster Info", moviePosterInfo);
             res.json(moviePosterInfo);
         };
         moviePush(data);
@@ -74,6 +71,7 @@ router.post("/api/movies", (req, res) => {
         db.movie.findAll({where: {
             title: req.body.title
         }}).then(function(results) {
+            console.log(results);
             let pos = results.map(function(e) { return e.title; }).indexOf(req.body.title);
             if (pos === -1){ 
                 const defaultPoster= "https://critics.io/img/movies/poster-placeholder.png";
