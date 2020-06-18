@@ -32,7 +32,8 @@ $(document).ready(function () {
             method: "POST",
             data: newMovie
         }).then((res) => {
-            postRating(res)
+            postRating(res);
+            location.reload();
         })
     }
     function postRating(res) {
@@ -46,7 +47,7 @@ $(document).ready(function () {
             data: newRating
         }).then((data) => {
             console.log("Rated New Movie", data.id);
-            location.reload()
+            
         })
     };
 
