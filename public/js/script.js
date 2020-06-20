@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     $("#firstMovieGenre a").click(function () {
         $("#selectedGenreOne").text($(this).text())
     });
@@ -15,13 +15,18 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(res => {
-                newMovie(res)
+                if (res.Response === "False") {
+                    alert("Please Check you spelling.....")
+                } else {
+                    newMovie(res)
+                }
+
             });
     };
     function newMovie(res) {
         const genreName = $("#selectedGenreOne").text()
         let newMovie = {
-            title: $("#addMovies").val().trim().toUpperCase(),
+            title: res.Title.toUpperCase(),
             genreId: parseInt($("#" + genreName).attr("data-id")),
             rating: $("#selectedRatingOne").text(),
             userId: parseInt($("#userNameHere").attr("data-id")),
@@ -47,18 +52,18 @@ $(document).ready(function () {
             data: newRating
         }).then((data) => {
             console.log("Rated New Movie", data.id);
-            
+
         })
     };
 
     $("#saveOptions").click(function () {
         event.preventDefault()
-        if ($("#addMovies").val() === ""){
+        if ($("#addMovies").val() === "") {
             alert("Please enter a movie")
-        }else{
+        } else {
             getMovie();
         }
-        
+
     })
     function grabMovieByGenre(genreId) {
 
@@ -66,7 +71,7 @@ $(document).ready(function () {
             method: "GET"
         }).then((res) => {
             $("#firstRow").empty();
-            const top6 = res.slice(0,6);
+            const top6 = res.slice(0, 6);
             top6.forEach(movie => {
                 var newBlock = $("<div class='col-md-4'>")
                 var newCard = $("<div class='card text-white bg-dark mb-3' style='max-width: 18rem;'></div")
